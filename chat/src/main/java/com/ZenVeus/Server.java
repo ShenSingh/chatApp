@@ -5,7 +5,7 @@ import java.net.*;
 import java.util.*;
 
 public class Server {
-    private static final int PORT = 8080;
+    private static final int PORT = 8081;
     private static Set<PrintWriter> clientWriters = new HashSet<>();
 
     public static void main(String[] args) {
@@ -58,5 +58,9 @@ public class Server {
                 }
             }
         }
+    }
+
+    public Object getClientHandler(){
+        return new ClientHandler(new Socket());
     }
 }
