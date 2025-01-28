@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -23,6 +24,8 @@ public class ChatController implements Initializable {
     private BufferedReader in;
 
     private String sendMsg;
+
+    File file1;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -74,6 +77,7 @@ public class ChatController implements Initializable {
         System.out.println(file);
 
         if (file.isFile()){
+            file1 = file;
             out.println(file);
         }
     }
